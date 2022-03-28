@@ -35,65 +35,113 @@
     
   </head>
   <body>
-    
-<main>
+    <main>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="logo.svg" width="30" height="30"> SRS Manager Tool</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <a class="nav-link" href="#">Contact us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="logout">Logout</a>
+            </li>
+          </ul>
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="logo.svg" width="30" height="30"> SRS Manager Tool</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <a class="nav-link" href="#">Contact us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </nav>
-
-
-  <div class="container py-4">
-    <div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">What is SRS?</h1>
-        <p class="col-md-8 fs-4">A software requirements specification (SRS) is a document that describes what the software will do and how it will be expected to perform. It also describes the functionality the product needs to fulfill all stakeholders (business, users) needs.</p>
-        <button class="btn btn-primary btn-lg" type="button">Learn more</button>
-      </div>
-    </div>
-
-    <div class="row align-items-md-stretch">
-      <div class="col-md-6">
-        <div class="h-100 p-5 text-white bg-dark rounded-3">
-          <h2>Create SRS document</h2>
-          <p>Here you can create your srs document. Our tool guides you through all important points and allows you to review must, should, and could criteria. Your tutor will have access to your SRS document in order to track your progress.</p>
-          <button class="btn btn-outline-light" type="button">Start</button>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="h-100 p-5 bg-light border rounded-3">
-          <h2>Edit</h2>
-          <p>This function allows to review and edit your SRS document. After implementing your must, should and could requirements, do not forget to check, so your tutor can follow your progress.</p>
-          <button class="btn btn-outline-secondary" type="button">Review</button>
+    </nav>
+
+
+    <div class="container py-4">
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">What is SRS?</h1>
+          <p class="col-md-8 fs-4">A software requirements specification (SRS) is a document that describes what the software will do and how it will be expected to perform. It also describes the functionality the product needs to fulfill all stakeholders (business, users) needs.</p>
+          <button class="btn btn-primary btn-lg" type="button">Learn more</button>
         </div>
       </div>
+
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <h2>Create SRS document</h2>
+            <p>Here you can create your srs document. Our tool guides you through all important points and allows you to review must, should, and could criteria. Your tutor will have access to your SRS document in order to track your progress.</p>
+            <button class="btn btn-outline-light" type="button">Start</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Edit</h2>
+            <p>This function allows to review and edit your SRS document. After implementing your must, should and could requirements, do not forget to check, so your tutor can follow your progress.</p>
+            <button class="btn btn-outline-secondary" type="button">Review</button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="pt-3 mt-4 text-muted border-top">
+        &copy; 2022
+      </footer>
     </div>
-
-    <footer class="pt-3 mt-4 text-muted border-top">
-      &copy; 2022
-    </footer>
-  </div>
-</div>
-</main>
-
-
-    
+    </div>
+    </main>
   </body>
+
+  <script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+		import {
+			getDatabase,
+			set,
+			ref,
+			update,
+		} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+		import {
+			getAuth,
+			signInWithEmailAndPassword,
+      signOut,
+		} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+
+		// Your web app's Firebase configuration
+		const firebaseConfig = {
+			apiKey: "AIzaSyC_oh5GjCurtcOf8LLKvC-a76XjfKNgyfk",
+			authDomain: "srsmanager-904f7.firebaseapp.com",
+			databaseURL:
+				"https://srsmanager-904f7-default-rtdb.europe-west1.firebasedatabase.app",
+			projectId: "srsmanager-904f7",
+			storageBucket: "srsmanager-904f7.appspot.com",
+			messagingSenderId: "27209487771",
+			appId: "1:27209487771:web:1b7a3c993b747d8c1afd3e",
+		};
+
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const database = getDatabase(app);
+
+		const auth = getAuth();
+    console.log(auth);
+    const currentUser = auth.currentUser;
+		const logout_button = document.getElementById("logout");
+    
+    
+		//SignIn button is clicked
+		logout_button.addEventListener("click", (e) => {
+			signOut(auth).then(() => {
+        // Sign-out successful.
+        //jump back to sign in page
+        location.href = "sign_in.html";
+      }).catch((error) => {
+        // An error happened.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage);
+      });
+		});
+	</script>
 </html>
